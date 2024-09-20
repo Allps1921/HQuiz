@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(8,10,32,1) 25%, rgba(23,30,70,1) 47%, rgba(0,212,255,1) 100%);
+}
+
+header {
+    width: 30%;
+    color: #fff;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.caixa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 720px;
+    width: 90%;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    color: #ffffff;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.caixa::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+}
+
+.pergunta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.pergunta-caixa {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.selecionar-dificuldade {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 6px;
+    background-color: chocolate;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+option {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 12px;
+}
+
+.resposta-caixa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    font-size: 32px;
+    gap: 4px;
+}
+
+.proxima-pergunta-caixa {
+    display: flex;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+.button {
+    cursor: pointer;
+    background-color: chocolate;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: filter 0.5s;
+    width: 100%;
+    height: auto;
+}
+
+.button:not(:disabled):hover {
+    filter: brightness(0.8);
+}
+
+.hide {
+    display: none;
+}
+
+.correct {
+    animation: correctAnimation 2s forwards;
+    border-radius: 8px;
+}
+
+.incorrect {
+    animation: incorrectAnimation 2s forwards;
+}
+
+.pergunta-botao:disabled {
+    cursor: not-allowed;
+}
+
+.mensagem-final {
+    font-size: 24px;
+    margin-top: 24px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* animação de fade out gradient */
+
+@keyframes fadeOutGradient {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes correctAnimation {
+    0% {
+        background: transparent(0 0, 0 100%,);
+    }
+    100% {
+        background: linear-gradient(135deg, #28a745, #a1e881) ;
+    }
+}
+
+@keyframes incorrectAnimation {
+    0% {
+        background: transparent(0 0, 0 100%,)
+    }
+    100% {
+        background: linear-gradient(135deg, #dc3545, #ffb3b3);
+    }
+}

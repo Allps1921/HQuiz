@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Quiz JavaScript</title>
+</head>
+<body>
+    <header>
+        <h1>Quiz JavaScript</h1>
+    </header>
+
+    <div class="caixa">
+        <div class="pergunta-caixa hide">
+            <span class="pergunta">
+                A pergunta ficará aqui
+            </span>
+            <span class="dificuldade">
+                Aqui ficará a dificuldade
+            </span>
+            <div class="resposta-caixa"></div>
+        </div>
+        <div class="proxima-pergunta-caixa">
+            <button class="start-game button">Iniciar Quiz</button>
+            <button class="dificuldade button">
+                <select id="dificuldade-jogo" class="selecionar-dificuldade">
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </button>
+            <button class="voltar-menu button hide">Finalizar</button>
+            <button class="voltar-pergunta hide button">Voltar</button>
+            <button class="proxima-pergunta hide button">Próxima Pergunta</button>
+        </div>
+    </div>
+    
+</body>
+</html>
